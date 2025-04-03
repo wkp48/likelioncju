@@ -1,0 +1,247 @@
+.Main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../assets/background.png);
+  background-size: cover;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+h1 {
+  color: white;
+  font-size: 50px;
+  border-color:black ;
+  margin-bottom: 38px;
+}
+
+p {
+  color: white;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 750;
+}
+
+.orange-text {
+  color: #FF7710;
+  font-weight: bold;
+}
+
+.cju-color{
+  color: #00489F;
+}
+
+.image-container {
+  margin-top: 10px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;  
+  gap: 2rem; 
+  align-items: center;
+}
+
+.brand-logo-image {
+  width: 70%;
+  max-width: 800px;
+  height: auto;
+}
+
+.History {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 20px;
+}
+
+.History.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.history-content {
+  display: flex;
+  gap: 3rem;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box {
+  background-color: rgba(255, 255, 255, 0.62);
+  padding: 30px 50px;
+  border-radius: 15px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.box h2 {
+  color: #FF7710;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.box p {
+  font-size: 36px;
+  color: white;
+  margin: 0;
+}
+
+.history-title {
+  color: white;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.Recruit {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Recruit.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.recruit-title {
+  color: white;
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+
+.year {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.timeline-container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.timeline {
+  width: 1500px;
+  height: 3px;
+  background-color: white;
+  position: relative;
+  margin: 60px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.timeline-point {
+  position: relative;
+  color: white;
+  text-align: center;
+  width: 150px;
+  font-size: 20px;
+  padding-top: 20px;
+  opacity: 1;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-point.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-point:first-child {
+  text-align: left;
+  padding-right: 20px;
+}
+
+.timeline-point:last-child {
+  text-align: right;
+  position: absolute;
+  right: -10px;
+  width: 150px;
+}
+
+.timeline-point::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-point:first-child::before {
+  left: 0;
+  transform: none;
+}
+
+.timeline-point:last-child::before {
+  left: auto;
+  right: 6px;
+  transform: none;
+}
+
+.timeline-point:nth-child(2),
+.timeline-point:nth-child(3) {
+  position: absolute;
+  left: 33%;
+  transform: translateX(-50%);
+}
+
+.timeline-point:nth-child(3) {
+  left: 66%;
+}
+
+.apply-button {
+  background-color: #FF7710;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: #ff8c33;
+  transform: translateY(-2px);
+}
