@@ -1,0 +1,77 @@
+.Term {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../assets/background.png);
+  background-size: cover;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  overflow-x: hidden;
+  padding-top: 120px;
+}
+
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+
+.mem-header {
+  position: fixed;
+  top: 60px;
+  z-index: 1;
+}
+
+.member-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 140px;
+  padding: 20px 20px;
+  max-width: 1400px;
+  margin: 20px;
+}
+
+.member-card {
+  background-color: #1a1a1a;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  width: 140%;
+}
+
+.member-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.position-tag {
+  background-color: #FF6B00;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin: 10px 0;
+}
+
+.member-name {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.member-department {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
