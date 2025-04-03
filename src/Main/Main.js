@@ -15,44 +15,59 @@ function App() {
   const recruitRef = useRef(null);
   
   useEffect(() => {
-    const historyObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
 
-    const recruitObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+    const handleIntersection = (entries, observer) => {
+      entries.forEach(entry => {
 
-    const currentHistoryRef = historyRef.current;
-    const currentRecruitRef = recruitRef.current;
+        if (!entry.isIntersecting) {
+          entry.target.classList.remove('visible');
+          const boxes = entry.target.querySelectorAll('.box, .timeline-point');
+          boxes.forEach(box => {
+            box.classList.remove('visible');
+          });
+        }
 
-    if (currentHistoryRef) {
-      historyObserver.observe(currentHistoryRef);
+        else {
+          entry.target.classList.add('visible');
+          const boxes = entry.target.querySelectorAll('.box');
+          const points = entry.target.querySelectorAll('.timeline-point');
+          
+          boxes.forEach((box, index) => {
+            setTimeout(() => {
+              box.classList.add('visible');
+            }, index * 200);
+          });
+
+          points.forEach((point, index) => {
+            setTimeout(() => {
+              point.classList.add('visible');
+            }, index * 200);
+          });
+        }
+      });
+    };
+
+    const historyObserver = new IntersectionObserver(handleIntersection, options);
+    const recruitObserver = new IntersectionObserver(handleIntersection, options);
+
+    if (historyRef.current) {
+      historyObserver.observe(historyRef.current);
     }
-    if (currentRecruitRef) {
-      recruitObserver.observe(currentRecruitRef);
+    if (recruitRef.current) {
+      recruitObserver.observe(recruitRef.current);
     }
 
     return () => {
-      if (currentHistoryRef) {
-        historyObserver.unobserve(currentHistoryRef);
+      if (historyRef.current) {
+        historyObserver.unobserve(historyRef.current);
       }
-      if (currentRecruitRef) {
-        recruitObserver.unobserve(currentRecruitRef);
+      if (recruitRef.current) {
+        recruitObserver.unobserve(recruitRef.current);
       }
     };
   }, []);
