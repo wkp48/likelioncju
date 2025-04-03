@@ -15,59 +15,44 @@ function App() {
   const recruitRef = useRef(null);
   
   useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
+    const historyObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-    const handleIntersection = (entries, observer) => {
-      entries.forEach(entry => {
+    const recruitObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-        if (!entry.isIntersecting) {
-          entry.target.classList.remove('visible');
-          const boxes = entry.target.querySelectorAll('.box, .timeline-point');
-          boxes.forEach(box => {
-            box.classList.remove('visible');
-          });
-        }
+    const currentHistoryRef = historyRef.current;
+    const currentRecruitRef = recruitRef.current;
 
-        else {
-          entry.target.classList.add('visible');
-          const boxes = entry.target.querySelectorAll('.box');
-          const points = entry.target.querySelectorAll('.timeline-point');
-          
-          boxes.forEach((box, index) => {
-            setTimeout(() => {
-              box.classList.add('visible');
-            }, index * 200);
-          });
-
-          points.forEach((point, index) => {
-            setTimeout(() => {
-              point.classList.add('visible');
-            }, index * 200);
-          });
-        }
-      });
-    };
-
-    const historyObserver = new IntersectionObserver(handleIntersection, options);
-    const recruitObserver = new IntersectionObserver(handleIntersection, options);
-
-    if (historyRef.current) {
-      historyObserver.observe(historyRef.current);
+    if (currentHistoryRef) {
+      historyObserver.observe(currentHistoryRef);
     }
-    if (recruitRef.current) {
-      recruitObserver.observe(recruitRef.current);
+    if (currentRecruitRef) {
+      recruitObserver.observe(currentRecruitRef);
     }
 
     return () => {
-      if (historyRef.current) {
-        historyObserver.unobserve(historyRef.current);
+      if (currentHistoryRef) {
+        historyObserver.unobserve(currentHistoryRef);
       }
-      if (recruitRef.current) {
-        recruitObserver.unobserve(recruitRef.current);
+      if (currentRecruitRef) {
+        recruitObserver.unobserve(currentRecruitRef);
       }
     };
   }, []);
