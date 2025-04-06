@@ -2,6 +2,14 @@ import React from 'react';
 import Header from '../components/Header';
 import MemHeader from '../components/MemHeader';
 import './term.css';
+import 박건률2 from '../assets/박건률2.jpeg'
+import 김지운 from '../assets/김지운.jpeg'
+import 김재영 from '../assets/김재영.jpeg'
+import 김신의 from '../assets/김신의.jpeg'
+import 김은성 from '../assets/김은성.jpeg'
+import 김채연 from '../assets/김채연.jpeg'
+import 전진호 from '../assets/전진호.jpeg'
+import 홍지우 from '../assets/홍지우.jpeg'
 import 기본이미지 from '../assets/default-profile.png'
 
 
@@ -11,31 +19,31 @@ function Term() {
       name: '박건률',
       position: '대표',
       department: '인공지능소프트웨어학과',
-      image: 기본이미지
+      image: 박건률2
     },
     {
       name: '김지운',
       position: '부대표',
       department: '인공지능소프트웨어학과',
-      image: 기본이미지
+      image: 김지운
     },
     {
       name: '김재영',
       position: '운영진',
       department: '인공지능소프트웨어학과',
-      image: 기본이미지
+      image: 김재영
     },
     {
       name: '김신의',
       position: '운영진',
       department: '인공지능소프트웨어학과',
-      image: 기본이미지
+      image: 김신의
     },
     {
       name: '김은성',
       position: '운영진',
       department: '인공지능소프트웨어학과',
-      image: 기본이미지
+      image: 김은성
     },
     {
       name: '김가빈',
@@ -59,7 +67,7 @@ function Term() {
       name: '김채연',
       position: 'Frontend',
       department: '인공지능소프트웨어학과',
-      image: 기본이미지
+      image: 김채연
     },
     {
       name: '김태현',
@@ -126,7 +134,7 @@ function Term() {
       name: '전진호',
       position: 'Backend',
       department: '인공지능소프트웨어학과',
-      image: 기본이미지
+      image: 전진호
     },
     {
       name: '전준범',
@@ -156,7 +164,7 @@ function Term() {
       name: '홍지우',
       position: 'Backend',
       department: '인공지능소프트웨어학과',
-      image: 기본이미지
+      image: 홍지우
     }
   ];
 
