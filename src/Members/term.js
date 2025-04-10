@@ -10,6 +10,9 @@ import 김은성 from '../assets/김은성.jpeg'
 import 김채연 from '../assets/김채연.jpeg'
 import 전진호 from '../assets/전진호.jpeg'
 import 홍지우 from '../assets/홍지우.jpeg'
+import 김가빈 from '../assets/김가빈.jpeg'
+import 김민오 from '../assets/김민오.jpeg'
+import 박세령 from '../assets/박세령.jpeg'
 import 기본이미지 from '../assets/default-profile.png'
 
 
@@ -49,13 +52,13 @@ function Term() {
       name: '김가빈',
       position: 'Frontend',
       department: '인공지능소프트웨어학과',
-      image: 기본이미지
+      image: 김가빈
     },
     {
       name: '김민오',
       position: 'Frontend',
       department: '인공지능소프트웨어학과',
-      image: 기본이미지
+      image: 김민오
     },
     {
       name: '김주현',
@@ -79,7 +82,7 @@ function Term() {
       name: '박세령',
       position: 'Frontend',
       department: '인공지능소프트웨어학과',
-      image: 기본이미지
+      image: 박세령
     },
     {
       name: '서우진',
